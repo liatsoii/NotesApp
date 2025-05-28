@@ -1,45 +1,45 @@
 # Notebook App - Flutter Web
 
-Простое приложение для заметок с локальным хранением данных на Flutter + Hive.
+A simple note-taking application with local data storage using Flutter + Hive.
 
-## Функции
-- Добавление заметок
-- Редактирование заметок
-- Удаление заметок
-- Сохранение при обновлении приложения
+## Features
+- Add notes
+- Edit notes
+- Delete notes
+- Data persistence on app refresh
 
-## Структура проекта
+## Project Structure
 ```typescript
-├── lib/                      → Основной код приложения
-│   ├── main.dart             → Точка входа
+├── lib/                      → Main application code
+│   ├── main.dart             → Entry point
 │   ├── models/
-│   │   ├── note.dart         → Модель Note
-│   │   └── note.g.dart       → Сгенерированный адаптер Hive
+│   │   ├── note.dart         → Note model
+│   │   └── note.g.dart       → Generated Hive adapter
 │   ├── screens/
-│   │   └── home_screen.dart  → Главный экран
+│   │   └── home_screen.dart  → Main screen
 │   ├── services/
-│   │   └── note_storage.dart → Логика работы с Hive
+│   │   └── note_storage.dart → Hive operations
 │   └── widgets/
-│       ├── note_card.dart    → Виджет карточки заметки
-│       └── note_dialog.dart  → Диалог редактирования
+│       ├── note_card.dart    → Note card widget
+│       └── note_dialog.dart  → Edit dialog
 ```
 
-## Требования перед запуском
-Как установить и использовать приложение:
-- Установите Flutter SDK
-- Установите Git
-- Установите Dart SDK
-- Установите Visual Studio Code
+## Prerequisites
+How to install and run the application:
+- Install Flutter SDK
+- Install Git
+- Install Dart SDK
+- Install Visual Studio Code
 
-Клонируйте репозиторий или в Visual Studio Code откройте папку с проектом "notebook_app"
+Clone the repository or open the project folder "notebook_app" in Visual Studio Code
 
-Для клонирования репозитория:
+To clone the repository:
 ```sh
 git clone https://github.com/liatsoii/notebook-app.git
 ```
-## Установите зависимости
+## Install dependencies
 
-Выполняйте по очереди действия в терминале.
+Execute these commands sequentially in the terminal.
 
 ```sh
 flutter pub get
@@ -50,70 +50,71 @@ flutter pub run build_runner build
 git run build_runner build
 ```
 
-Запуск приложения
+Run the application
 
 ```sh
 flutter run -d chrome
 ```
-## Использованные технологии в проекте Notebook App
-1. Основные технологии
+## Technologies Used in Notebook App
 
-Flutter (v3.0+) – фреймворк для кроссплатформенной разработки.
+Core Technologies:
 
-Dart (v3.0+) – язык программирования для Flutter.
+Flutter (v3.0+) – cross-platform development framework.
 
-2. Локальное хранилище
+Dart (v3.0+) – programming language for Flutter.
 
-Hive (^2.2.3) – NoSQL база данных для локального хранения.
+Local Storage:
 
-Hive Flutter (^1.1.0) – интеграция Hive с Flutter.
+Hive (^2.2.3) – NoSQL database for local storage.
 
-Hive Generator (^2.0.0) – генерация адаптеров для моделей.
+Hive Flutter (^1.1.0) – Hive integration with Flutter.
 
-3. Зависимости (dependencies)
+Hive Generator (^2.0.0) – model adapters generation.
 
-path_provider (^2.1.2) – доступ к файловой системе.
+Dependencies:
 
-cupertino_icons (^1.0.8) – иконки в стиле iOS.
+path_provider (^2.1.2) – filesystem access.
 
-4. Dev-зависимости (dev_dependencies)
+cupertino_icons (^1.0.8) – iOS-style icons.
 
-build_runner (^2.4.6) – генерация кода (для Hive).
+Dev Dependencies:
 
-flutter_test – тестирование (встроено в Flutter SDK).
+build_runner (^2.4.6) – code generation (for Hive).
 
-flutter_launcher_icons (^0.13.1) – генерация иконок приложения.
+flutter_test – testing (included in Flutter SDK).
 
-5. Инструменты и вспомогательные технологии
-   
-Material Design – дизайн-система от Google (использована в UI).
+flutter_launcher_icons (^0.13.1) – app icon generation.
 
-ValueListenableBuilder – реактивное обновление UI при изменениях в Hive.
+Tools and Supporting Technologies:
 
-AlertDialog & TextField – стандартные виджеты Flutter для форм.
+Material Design – Google's design system (used in UI).
 
-6. Сборка и запуск
-   
-Flutter Web – поддержка запуска в браузере (--web-renderer html).
+ValueListenableBuilder – reactive UI updates with Hive changes.
 
-Live Server (VS Code) – локальный сервер для тестирования веб-версии.
+AlertDialog & TextField – standard Flutter widgets for forms.
 
-7. Система контроля версий 
-   
-Git – для управления исходным кодом (.gitignore в проекте).
+Build and Run:
 
-| Технология         | Роль в проекте                                                                 |
+Flutter Web – browser support (--web-renderer html).
+
+Live Server (VS Code) – local server for web version testing.
+
+Version Control:
+
+Git – source code management (.gitignore included).
+
+| Technology         | Role in Project                                                                 |
 |--------------------|-------------------------------------------------------------------------------|
-| **Flutter**        | Основной фреймворк для создания кроссплатформенного UI                        |
-| **Dart**           | Язык программирования для бизнес-логики приложения                            |
-| **Hive**           | Быстрое локальное хранилище заметок (NoSQL база)                              |
-| **Hive Flutter**   | Интеграция Hive с Flutter-приложением                                         |
-| **Hive Generator** | Автогенерация адаптеров для моделей данных                                    |
-| **path_provider**  | Доступ к файловой системе для работы Hive                                     |
-| **Material Design**| Дизайн-система для создания интерфейса (кнопки, карточки, диалоги)           |
-| **ValueListenableBuilder** | Реактивное обновление UI при изменениях данных в Hive                 |
-| **build_runner**   | Генерация кода для работы Hive с моделями данных                              |
-| **Flutter Web**    | Поддержка запуска приложения в веб-браузере (Chrome)                          |
-| **Live Server**    | Локальный сервер для тестирования веб-версии в VS Code                        |
+| **Flutter**        | Main framework for cross-platform UI development                        |
+| **Dart**           | Programming language for business logic                            |
+| **Hive**           | Fast local storage for notes (NoSQL database)                              |
+| **Hive Flutter**   | Hive integration with Flutter app                                         |
+| **Hive Generator** | Auto-generation of data model adapters                                    |
+| **path_provider**  | Filesystem access for Hive operations                                     |
+| **Material Design**| Design system for UI (buttons, cards, dialogs)           |
+| **ValueListenableBuilder** | Reactive UI updates when Hive data changes                 |
+| **build_runner**   | Code generation for Hive model operations                              |
+| **Flutter Web**    | Browser support (Chrome))                          |
+| **Live Server**    | Local server for web version testing in VS Code                        |
 
-## Разработано с ❤️ для удобного ведения заметок
+## Developed with ❤️ for convenient note-taking
